@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Swagger setup
   const config = new DocumentBuilder()
-    .setTitle('Auth Project API')
+    .setTitle('User Auth Project API')
     .setDescription('Users NestJS Auth Project')
     .setVersion('1.0')
     .addBearerAuth()
