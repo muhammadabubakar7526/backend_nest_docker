@@ -52,6 +52,9 @@ jobs:
             docker rm auth-backend-container || true
 
             echo "Running new container..."
-            docker run -d -p 3000:3000 --name auth-backend-container --env-file /home/user/auth-project/.env ${{ secrets.DOCKER_USERNAME }}/auth-backend:latest
+            docker run -d -p 3000:3000 \
+              --name auth-backend-container \
+              --env-file /home/${{ secrets.SERVER_USER }}/auth-project/.env \
+              ${{ secrets.DOCKER_USERNAME }}/auth-backend:latest
 
             echo "Deployment finished!"
